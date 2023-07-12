@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,8 +22,8 @@ namespace EmployeeWageComputation
                 Console.WriteLine("Employee Is Absent");
         }
         public void CalculateEmpWage() {
-            int empCheck = random.Next(0, 2);//0 1 2
-            if (empCheck == IS_FULL_TIME)
+            int empCheck = random.Next(0, 3);//0 1 2
+           /* if (empCheck == IS_FULL_TIME)
             {
                 empHrs = FULL_DAY_HR;
             }
@@ -31,6 +32,26 @@ namespace EmployeeWageComputation
             {
                 empHrs = PART_DAY_HR;
             }
+
+            user case 3 is above one is
+           */  
+
+            switch (empCheck)
+            {
+                case IS_FULL_TIME:
+                    empHrs = FULL_DAY_HR;
+                    break;
+
+                case IS_PART_TIME:
+                    empHrs = PART_DAY_HR;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
+
+
+            }
+
 
             int totalEmpWage = empHrs * WAGE_PER_HR;
             Console.WriteLine(totalEmpWage);
