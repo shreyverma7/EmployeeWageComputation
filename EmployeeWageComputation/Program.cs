@@ -6,6 +6,8 @@ internal class Program
     {
         Console.WriteLine("Welcome to Employee Wages");
         EmployeeAttendance employeeAttendance = new EmployeeAttendance();
-        employeeAttendance.EmpAttendance();
+      //  employeeAttendance.EmpAttendance();
+        employeeAttendance.CalculateEmpWage();
+
     }
 }
