@@ -11,16 +11,21 @@ namespace EmployeeWageComputation
 
     {
         const int  FULL_DAY_HR = 8 , PART_DAY_HR = 4, IS_FULL_TIME =0 , IS_PART_TIME = 1 ;
-        int totalEmpWage = 0 ,empHrs = 0,wagePerHr, totalWorkingDays,totalWorkingHrs ;
-        string comapanyName;
+        int totalEmpWage = 0 ,empHrs = 0,wagePerHr, totalWorkingDays,totalWorkingHrs,total_Employee_Wage ;
+        string comapanyName = "";
         Random random = new Random();
 
-        public EmployeeAttendance(String  companyNamee, int wagePerHr, int totalWorkingDays,int totalWorkingHrs)
+        
+        public EmployeeAttendance()
         {
-            this.comapanyName = companyNamee;
-            this.wagePerHr = wagePerHr;
-            this.totalWorkingDays = totalWorkingDays;
-            this.totalWorkingHrs = totalWorkingHrs;
+            Console.WriteLine("Enter company name");
+            this.comapanyName = Console.ReadLine();
+            Console.WriteLine("Wages per hour");
+            this.wagePerHr = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("NUmber of working days");
+            this.totalWorkingDays = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Total working hours");
+            this.totalWorkingHrs = Convert.ToInt32(Console.ReadLine());
         }
         public void EmpAttendanceAttendance() {
           
@@ -53,9 +58,11 @@ namespace EmployeeWageComputation
                 }
             }
 
-            int totalEmpWage = empHrs * wagePerHr;
-            Console.WriteLine(comapanyName+"---->"+totalEmpWage);
-
+            // int totalEmpWage = empHrs * wagePerHr;
+            // Console.WriteLine(comapanyName+"---->"+totalEmpWage);
+            total_Employee_Wage = wagePerHr * empHrs;
+            Console.WriteLine("Daily wages of "+this.comapanyName+" is " + total_Employee_Wage);
         }
+        
     }
 }
