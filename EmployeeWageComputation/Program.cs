@@ -13,12 +13,32 @@ internal class Program
         //  //  employeeAttendance.EmpAttendance();
         //  samsumgwages.CalculateEmpWage();
 
-        EmployeeAttendance company1 = new EmployeeAttendance();
-        company1.EmpAttendanceAttendance();
-        company1.CalculateEmpWage();
-        EmployeeAttendance company2 = new EmployeeAttendance();
-        company2.EmpAttendanceAttendance();
-        company2.CalculateEmpWage();
+        EmpWageBuilder emp = new EmpWageBuilder();
+        bool flag = true;
+        while (flag)
+        {
+            Console.WriteLine("Enter input -->\n1.Add \n2.exit");
+            int input =Convert.ToInt32(Console.ReadLine());
+            switch (input)
+            {
+                case 1:
+                    Console.WriteLine("Enter company Name :");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Enter wage per hour :");
+                    int wagePerHour = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter Total working days :");
+                    int totalworkngdys = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter Total working Hours :");
+                    int totalwokignhrs = Convert.ToInt32(Console.ReadLine());
+                    emp.AddToCompanyArray(name, wagePerHour, totalworkngdys, totalwokignhrs);
+                    emp.CalculateWage();
+                    break;
+                 case 2:
+                    flag = false;    
+                    break;
 
+            }
+        }
+      
     }
 }

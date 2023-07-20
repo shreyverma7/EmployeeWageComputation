@@ -15,17 +15,12 @@ namespace EmployeeWageComputation
         string comapanyName = "";
         Random random = new Random();
 
-        
-        public EmployeeAttendance()
+        public EmployeeAttendance(string companyname, int wageperhr, int totalWorkingdays, int totalworkinghrs)
         {
-            Console.WriteLine("Enter company name");
-            this.comapanyName = Console.ReadLine();
-            Console.WriteLine("Wages per hour");
-            this.wagePerHr = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("NUmber of working days");
-            this.totalWorkingDays = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Total working hours");
-            this.totalWorkingHrs = Convert.ToInt32(Console.ReadLine());
+            this.comapanyName = companyname;
+            this.wagePerHr = wageperhr;
+            this.totalWorkingDays = totalWorkingdays;
+            this.totalWorkingHrs = totalworkinghrs;
         }
         public void EmpAttendanceAttendance() {
           
@@ -62,7 +57,8 @@ namespace EmployeeWageComputation
             // Console.WriteLine(comapanyName+"---->"+totalEmpWage);
             total_Employee_Wage = wagePerHr * empHrs;
             Console.WriteLine("Daily wages of "+this.comapanyName+" is " + total_Employee_Wage);
+
         }
-        
+       
     }
 }
